@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 70px;">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.description}}</td>
+                <td>
+                    <button (click)="selectEmployee(employee,insertar)" class="btn btn-success">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        VER
+                    </button>
+                    <button (click)="selectEmployee(employee,editar)" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        Editar
+                    </button>
+                    <button (click)="selectEmployee(employee,borrar)" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        Borrar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="card text-center" *ngIf="selectedEmployee">
+        <div class="card-header">
+            #
+        </div>
+        <div class="card-block">
+            <h4 class="card-title"></h4>
+            <p class="card-text">
+
+            </p>
+        </div>
+
+    </div>
+</div>

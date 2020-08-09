@@ -1,0 +1,30 @@
+<h3>Parent Component</h3>
+
+<label>Parent </label>
+<input type="text" #pcomponent (keyup)="0" />
+
+<p>Value of child component is: {{ CData }}</p>
+<hr>
+<app-categorias [PData]="pcomponent.value" (childEvent)="CData=$event"></app-categorias>
+
+
+<hr>
+<p>
+    nombre categoria
+    <input type="text" #nombrecategoria (keyup)="0">/>
+</p>
+<select [(ngModel)]="opcionSeleccionado" class="form-control" name="priority" (change)="capturar()">
+    <option *ngFor="let list of priorityList" [value]="list.value">
+        {{list.label}}
+    </option>
+</select>
+
+<p>Value of child component is: {{ opcionSeleccionado }}</p>
+
+<hr />
+<p>DEL HIJO AL PADRE </p>
+<app-categorias [nombre]="opcionSeleccionado" (newItemEvent)="addItem($event)">
+</app-categorias>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>

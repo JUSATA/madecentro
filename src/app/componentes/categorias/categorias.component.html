@@ -1,0 +1,13 @@
+<h3>Child Component</h3>
+
+<label>Child </label>
+<input type="text" #ccomponent (keyup)="onChange(ccomponent.value)" />
+
+<p>Value of parent component is: {{ PData }}</p>
+
+<hr>
+<h2>Value of padre component is: {{nombre}}</h2>
+
+<hr />
+<label>Add an item: <input #newItem></label>
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>

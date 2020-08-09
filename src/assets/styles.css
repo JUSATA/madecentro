@@ -1,0 +1,13 @@
+
+.navigation.col-lg-12{
+    margin-top: 10px;
+}
+
+.jumbotron{
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 1px cornflowerblue;
+}
+.navbar-nav .active{
+    border-bottom: 3px solid rgb(131, 118, 94);
+}
